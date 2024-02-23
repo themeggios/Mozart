@@ -203,10 +203,10 @@ def recognize(out_file, most_common, coord_imgs, imgs_with_staff, imgs_spacing, 
 
 
 def main(input_path, output_path):
-    imgs_path = sorted(glob(f'{input_path}/*'))
+    imgs_path = sorted(glob(f'{input_path}\\*'))
     for img_path in imgs_path:
-        img_name = img_path.split('/')[-1].split('.')[0]
-        out_file = open(f'{output_path}/{img_name}.txt', "w")
+        img_name = img_path.split('\\')[-1].split('.')[0]
+        out_file = open(f'{output_path}\\{img_name}.txt', "w")
         print(f"Processing new image {img_name}...")
         img = io.imread(img_path)
         img = gray_img(img)
